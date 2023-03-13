@@ -16,14 +16,28 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // Define3 the default brightness and colors.
         brightness: Brightness.light,
-        // appBarTheme: AppBarTheme(
-        //     backgroundColor: Colors.blue,
-        //     foregroundColor: Colors.white //here you can give the text color
-        //     )
+        appBarTheme: const AppBarTheme(
+            color: Colors.black54,
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+            ),
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            )),
       ),
       themeMode: ThemeMode.system,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(
+          color: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
       ),
       home: MyHomePage(),
     );
