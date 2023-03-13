@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BodyItem extends StatelessWidget {
-  const BodyItem({Key? key}) : super(key: key);
+  final int index;
+  const BodyItem({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class BodyItem extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              'assets/img/food-1.jpg',
+              'assets/img/food-$index.jpg',
               height: MediaQuery.of(context).size.height * 0.5,
               fit: BoxFit.fitHeight,
             ),
