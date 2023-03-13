@@ -12,7 +12,19 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        // Define3 the default brightness and colors.
+        brightness: Brightness.light,
+        // appBarTheme: AppBarTheme(
+        //     backgroundColor: Colors.blue,
+        //     foregroundColor: Colors.white //here you can give the text color
+        //     )
+      ),
+      themeMode: ThemeMode.system,
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: MyHomePage(),
     );
   }
@@ -68,19 +80,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text(
           'Salad',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: false,
         leading: const Icon(
           Icons.arrow_back_sharp,
-          color: Colors.black,
         ),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 20),
             child: Icon(
               Icons.search,
-              color: Colors.black,
             ),
           )
         ],
@@ -128,7 +140,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       const Text(
                         'Sort by',
                         style: TextStyle(
-                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 22,
                         ),
